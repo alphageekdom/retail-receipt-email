@@ -48,6 +48,7 @@
             }
 
             body {
+
                 height: 100% !important;
                 Margin: 0 !important;
                 padding: 0 !important;
@@ -98,14 +99,18 @@
 
             @media only screen and (max-width: 480px) {
                 .responsive-table {
-                    width: 95% !important;
+                    width: 100% !important;
+                }
+
+                button {
+                    width: 300px !important;
                 }
             }
         </style>
     </head>
 
     <body id="body"
-        style="Margin: 0 !important; padding: 0 !important; background-color: #F9F6EE; font-family: Poppins, Arial, Helvetica, sans-serif; font-size: 18px; line-height: 1.2; color: #000000;">
+        style="margin: 0 !important; padding: 0 !important; background-color: #F9F6EE; font-family: Poppins, Arial, Helvetica, sans-serif; font-size: 18px; line-height: 1.2; color: #000000;">
         <!-- START OF PREVIEW TEXT -->
         <div style="display: none; max-height: 0; overflow: hidden;">
             Your BestBuy Order Has Been Received...
@@ -118,7 +123,7 @@
         <!-- END OF PREVIEW TEXT -->
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
             <tr>
-                <td style="padding: 30px 0;" align="center">
+                <td style="padding: 0;" align="center">
                     <!-- START OF EMAIL (600PX) -->
                     <table class="responsive-table" role="presentation" width="600" cellspacing="0" cellpadding="0"
                         border="0" align="center"
@@ -132,7 +137,7 @@
                                         cellpadding="0" border="0" align="center">
                                         <tbody>
                                             <tr>
-                                                <td class="dw db" width="260">
+                                                <td width="260">
                                                     <table role="presentation" width="90%" cellspacing="0"
                                                         cellpadding="0" border="0" align="center">
                                                         <tbody>
@@ -147,7 +152,7 @@
                                                         </tbody>
                                                     </table>
                                                 </td>
-                                                <td class="dw db" width="260">
+                                                <td width="260">
                                                     <table role="presentation" width="90%" cellspacing="0"
                                                         cellpadding="0" border="0" align="center">
                                                         <tbody>
@@ -176,51 +181,77 @@
                                 <td style="color: #000000; ; text-align: left; font-weight: 300; font-size: 24px; margin: 0;"
                                     align="left" class="order">
                                     <table width="100%">
-                                        <tr>
-                                            <td width="100%" class="content" style="padding: 20px;">
-                                                <img src="/img/checkmark.svg" alt="checkmark" width="40" height="40"
-                                                    style="font-weight: 800; display: inline-block;" />
-                                                <h3
-                                                    style="margin: 0; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;">
-                                                    Here's your order information</h3>
-                                                <p
-                                                    style="font-size: 18px; margin-bottom: 8px; font-weight: 400; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;">
-                                                    Sam,
-                                                    we're getting your
-                                                    order
-                                                    ready. Thanks
-                                                    for shopping with Best
-                                                    Buy.</p>
-                                                <p
-                                                    style="font-size: 18px; margin-bottom: 10px; font-weight: 400; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;">
-                                                    Order
-                                                    number:
-                                                    <span
-                                                        style="font-weight: 600; color: #0046BE;">BBY55-111222333444</span>
-                                                </p>
-                                                <a href="#" class="button"
-                                                    style="background-color: #FFF204; border-radius: 10px; font-size: 17px; font-weight: bold; text-decoration: none; border-radius: 20px; padding: 10px 34%; display: inline-block; color: #3d3d3d;cursor: pointer; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;">View
-                                                    Order
-                                                    Details</a>
-                                            </td>
-                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td width="100%" class="content" style="padding: 20px;">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="left">
+                                                                    <img src="/img/checkmark.svg" alt="checkmark"
+                                                                        width="40" height="40"
+                                                                        style="font-weight: 800; display: inline-block;" />
+                                                                    <h3
+                                                                        style="margin: 0; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;">
+                                                                        Here's your order information</h3>
+                                                                    <p
+                                                                        style="font-size: 18px; margin-bottom: 8px; font-weight: 400; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;">
+                                                                        Sam,
+                                                                        we're getting your
+                                                                        order
+                                                                        ready. Thanks
+                                                                        for shopping with Best
+                                                                        Buy.</p>
+                                                                    <p
+                                                                        style="font-size: 18px; margin-bottom: 10px; font-weight: 400; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;">
+                                                                        Order
+                                                                        number:
+                                                                        <span
+                                                                            style="font-weight: 600; color: #0046BE;">BBY55-111222333444</span>
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="100%" class="content" style="padding: 20px;" align="center">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center" width="95%">
+                                                                    <button href="https://www.example.com/"
+                                                                        target="_blank"
+                                                                        style="font-size: 14px; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; color: #3d3d3d; text-decoration: none; border-radius: 20px; -webkit-border-radius: 20px; background-color: #FFF204; border-top: 10px solid #FFF204; border-bottom: 10px solid #FFF204; border-right: 30px solid #FFF204; border-left: 30px solid #FFF204; display: inline-block; text-transform: uppercase; width: 500px;">View
+                                                                        Order Details</button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 </td>
                             </tr>
                             <!-- END OF ORDER INFORMATION -->
                             <!-- START OF PICKUP INFO -->
                             <tr>
-                                <td>
-                                    <table width="100%" style="padding: 20px 0 10px 20px;">
-                                        <tr>
-                                            <td>
-                                                <h1
-                                                    style="color: #3d3d3d; margin: 0; padding-bottom: 0; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;">
-                                                    Your
-                                                    order pickup info.
-                                                </h1>
-                                            </td>
-                                        </tr>
+                                <td style="padding-top: 30px;" align="center">
+                                    <table role="presentation" width="90%" cellspacing="0" cellpadding="0" border="0"
+                                        align="center">
+                                        <tbody>
+                                            <tr>
+                                                <td
+                                                    style="color: #3d3d3d; margin: 0; padding-bottom: 0; font-family: Poppins, Arial, Helvetica, sans-serif;">
+                                                    <h2 style="margin: 0; padding: 20px 0px; font-size: 2rem;">
+                                                        Your
+                                                        order pickup info.
+                                                    </h2>
+                                                </td>
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 </td>
                             </tr>
