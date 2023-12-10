@@ -193,7 +193,7 @@
                                                                         align="right">
                                                                         <p
                                                                             style="font-family: Poppins, Arial, Helvetica, sans-serif;padding-top: 0; margin: 0;">
-                                                                            1-888-555-5555</p>
+                                                                            1-888-BESTBUY</p>
                                                                         <a href="https://www.example.com"
                                                                             target="_blank"
                                                                             style="font-family: Poppins, Arial, Helvetica, sans-serif; font-size: 10px; letter-spacing: 1px; text-decoration: none; color: #FFFFFF; font-weight: 300; display: block;">
@@ -859,6 +859,64 @@
                 </tr>
             </tbody>
         </table>
+
+        <div id="result"></div>
+
+        <!-- Liquid For Development -->
+        <script src="https://cdn.jsdelivr.net/npm/liquidjs/dist/liquid.browser.umd.js"></script>
+        <script>
+            const template = document.querySelector('[type="text/template"]');
+            const result = document.querySelector("#result");
+            const engine = new liquidjs.Liquid();
+
+            engine
+                .parseAndRender(template.innerHTML, {
+                    customer: {
+                        id: 12345,
+                        first_name: 'Chad',
+                    },
+                    company: {
+                        company_name: "Best Buy",
+                        street: "7601 Penn Avenue South",
+                        city: " Richfield",
+                        state: "MN",
+                        zipcode: "55423-3645",
+                        home_page: "https://www.bestbuy.com/",
+                        contact_page: "https://www.bestbuy.com/contact-us",
+                        privacy_page: "https://www.bestbuy.com/site/help-topics/privacy-policy/pcmcat204400050062.c?id=pcmcat204400050062",
+                        signup_page: "https://www.bestbuy.com/site/best-buy-membership/my-best-buy/pcmcat309300050007.c?id=pcmcat309300050007",
+                        outlet_page: "https://www.bestbuy.com/site/electronics/outlet-refurbished-clearance/pcmcat142300050026.c?id=pcmcat142300050026",
+                        deal_of_day_page: "https://www.bestbuy.com/site/electronics/top-deals/pcmcat1563299784494.c?id=pcmcat1563299784494&ref=212&loc=1693892332&ds_rl=1260402&gad_source=1&gclid=CjwKCAiAvdCrBhBREiwAX6-6UiXcxQRA2VcCVnh6gZQ4uuE-WcoVaR5SAghs4H31-e1aGFOdiS4gTxoCg4gQAvD_BwE&gclsrc=aw.ds",
+                        mobile_app_page: "https://www.bestbuy.com/site/misc/mobile-app/pcmcat208500050016.c?id=pcmcat208500050016",
+                        credit_card_page: "https://www.bestbuy.com/site/misc/financing-rewards/pcmcat102500050032.c?id=pcmcat102500050032",
+                        support_page: "https://www.bestbuy.com/support",
+                        phone_number: "1 (888) 237-8289",
+                    },
+                    order: {
+                        id: "BBY55-111222333444",
+                        tracking_url: "https://www.example.com",
+                        pickup_address: "3756 Mesa Drive",
+                        pickup_city: "Las Vegas",
+                        pickup_state: "NV",
+                        pickup_zipcode: "88901-5555",
+                        pickup_country: "USA",
+                        items_total: 4,
+                        items_models: "MQTP3LL/A, WDBAJP0050BBK-WESN, MTL73LL/A, 4556",
+                        items_skus: "6501017, 6406512, 6534641, 6296126",
+                        items_titles: "Beats Studio, Easystore 5TB External USB 3.0 Portable Hard Drive, Apple - MacBook Pro 14 Laptop - M3 chip, Thule - Accent Backpack",
+                        items_colors: "Rose Gold, Black, Space Gray, Black",
+                        items_page: "https://www.bestbuy.com/site/beats-solo-wireless-on-ear-headphones-rose-gold/6383126.p?skuId=6383126,https://www.bestbuy.com/site/wd-easystore-5tb-external-usb-3-0-portable-hard-drive-black/6406512.p?skuId=6406512,https://www.bestbuy.com/site/apple-macbook-pro-14-laptop-m3-chip-8gb-memory-10-core-gpu-512gb-ssd-latest-model-space-gray/6534641.p?skuId=6534641,https://www.bestbuy.com/site/thule-accent-backpack-23l-bundle-for-15-6-laptop-w-subterra-powershuttle-10-tablet-sleeve-safezone-water-bottle-holder-black/6296126.p?skuId=6296126",
+                        items_images: "./img/beats-headphones.jpg, ./img/external-hard-drive.jpg, ./img/macbook.jpg, ./img/backpack.jpg",
+                        items_quantities: "1, 2, 3, 1",
+                        items_prices: '199.99, 134.99, 1449.00, 129.95',
+                        subtotal: "1,913.93",
+                        total: "2,074.32",
+                        shipping_price: "Free",
+                        sales_tax: "160.39"
+                    }
+                })
+                .then((html) => (result.innerHTML = html));
+        </script>
     </body>
 
 </html>
