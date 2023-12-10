@@ -142,6 +142,7 @@
 
     <body id="body"
         style="margin: 0 !important; padding: 0 !important; background-color: #F9F6EE; font-family: Poppins, Arial, Helvetica, sans-serif; font-size: 18px; line-height: 1.2; color: #000000;">
+        <script type="text/template">
         <!-- START OF PREVIEW TEXT -->
         <div style="display: none; max-height: 0; overflow: hidden;">
             Your BestBuy Order Has Been Received...
@@ -191,9 +192,9 @@
                                                                 <tr>
                                                                     <td style="font-weight: 500; font-family: Poppins, Arial, Helvetica, sans-serif;"
                                                                         align="right">
-                                                                        <p
-                                                                            style="font-family: Poppins, Arial, Helvetica, sans-serif;padding-top: 0; margin: 0;">
-                                                                            1-888-BESTBUY</p>
+                                                                        <a href="tel:18882378289" target="_blank"
+                                                                            style="font-family: Poppins, Arial, Helvetica, sans-serif; font-size: 14px; letter-spacing: 1px; text-decoration: none; color: #FFFFFF; font-weight: 600; display: block;">
+                                                                            {{ company.phone_number }}</a>
                                                                         <a href="https://www.example.com"
                                                                             target="_blank"
                                                                             style="font-family: Poppins, Arial, Helvetica, sans-serif; font-size: 10px; letter-spacing: 1px; text-decoration: none; color: #FFFFFF; font-weight: 300; display: block;">
@@ -231,7 +232,7 @@
                                                                             Here's your order information</h3>
                                                                         <p
                                                                             style="font-size: 18px; margin-bottom: 8px; font-weight: 400; font-family: Poppins, Arial, Helvetica, sans-serif;">
-                                                                            Sam,
+                                                                            {{ customer.first_name }},
                                                                             we're getting your
                                                                             order
                                                                             ready. Thanks
@@ -242,7 +243,8 @@
                                                                             Order
                                                                             number:
                                                                             <span
-                                                                                style="font-weight: 600; color: #0046BE;">BBY55-111222333444</span>
+                                                                                style="font-weight: 600; color: #0046BE;">{{
+                                                                                order.id }}</span>
                                                                         </p>
                                                                     </td>
                                                                 </tr>
@@ -256,7 +258,7 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td align="center">
-                                                                        <a href="https://www.example.com/"
+                                                                        <a href="{{ order.tracking-order }}"
                                                                             target="_blank"
                                                                             style="font-size: 14px; font-family: Poppins, Arial, Helvetica, sans-serif; color: #3d3d3d; text-decoration: none; border-radius: 20px; -webkit-border-radius: 20px; background-color: #FFF204; border-top: 10px solid #FFF204; border-bottom: 10px solid #FFF204; border-right: 30px solid #FFF204; border-left: 30px solid #FFF204; display: inline-block; text-transform: uppercase;"
                                                                             class="big_btn">View
@@ -312,15 +314,16 @@
                                                                                             target="_blank"
                                                                                             style="font-family: Poppins, Arial, Helvetica, sans-serif; color: #0046BE; font-size: 1.5rem; font-weight: 800; text-decoration: none;">Best
                                                                                             Buy
-                                                                                            Las Vegas</a>
+                                                                                            {{ order.pickup_city }}</a>
                                                                                         <p
                                                                                             style="font-family: Poppins, Arial, Helvetica, sans-serif; font-size: 1.5rem; font-weight: 800; margin: 0;">
-                                                                                            123 Fake
-                                                                                            St</p>
+                                                                                            {{ order.pickup_address }}
+                                                                                        </p>
                                                                                         <p
                                                                                             style="font-family: Poppins, Arial, Helvetica, sans-serif; font-size: 1.5rem; font-weight: 800; margin: 0;">
-                                                                                            Las Vegas,
-                                                                                            NV 88901-5555
+                                                                                            {{ order.pickup_city }},
+                                                                                            {{ order.pickup_state }} {{
+                                                                                            order.pickup_zipcode }}
                                                                                         </p>
                                                                                     </td>
                                                                                 </tr>
@@ -333,93 +336,120 @@
                                                     </td>
                                                 </tr>
                                                 <!-- END OF STORE INFO -->
-                                                <!-- START OF ITEMS -->
-                                                <tr>
-                                                    <td align="left">
-                                                        <table class="responsive-table" role="presentation" width="540"
-                                                            cellspacing="0" cellpadding="0" border="0" align="center"
-                                                            style="margin-bottom: 1rem;">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="dw db" width="260"
-                                                                        style="padding: 2rem 0;">
-                                                                        <table role="presentation" width="100%"
-                                                                            cellspacing="0" cellpadding="0" border="0"
-                                                                            align="center">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td>
-                                                                                        <img src="/img/beats-headphones.jpg"
-                                                                                            alt="Dre Beats Headphones"
-                                                                                            title="Dre Beats Headphones"
-                                                                                            width="100"
-                                                                                            style="object-fit: cover; object-position: center;"
-                                                                                            id="product-img" />
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>
-                                                                                        <p
-                                                                                            style="font-size: 18px; margin: 0; font-family: Poppins, Arial, Helvetica, sans-serif; margin-top: 1rem;">
-                                                                                            <span
-                                                                                                style="font-weight: 500;">Model
-                                                                                                #:</span> 42340-322
-                                                                                        </p>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>
-                                                                                        <p
-                                                                                            style="font-size: 18px; margin: 0; font-family: Poppins, Arial, Helvetica, sans-serif;">
-                                                                                            <span
-                                                                                                style="font-weight: 500;">SKU:</span>
-                                                                                            8749533
-                                                                                        </p>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>
-                                                                                        <p
-                                                                                            style="font-size: 18px; margin: 0; font-family: Poppins, Arial, Helvetica, sans-serif;">
-                                                                                            <span
-                                                                                                style="font-weight: 500;">Qty:</span>
-                                                                                            1
-                                                                                        </p>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                    <td class="dw db" width="260">
-                                                                        <table role="presentation" width="90%"
-                                                                            cellspacing="0" cellpadding="0" border="0"
-                                                                            align="center">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td>
-                                                                                        <a href="www.example.com"
-                                                                                            target="_blank"
-                                                                                            style="font-size: 1.2rem; font-weight: 400; font-family: Poppins, Arial, Helvetica, sans-serif; text-decoration: none;">Apple
-                                                                                            Beats - Dre
-                                                                                            Beats Studio Pro -
-                                                                                            Champagne</a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>
-                                                                                        <p
-                                                                                            style="font-size: 18px; font-weight: 400; margin-top: 10px; font-family: Poppins, Arial, Helvetica, sans-serif;">
-                                                                                            $199.99</p>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
+                                                <ul>
+                                                    {% assign items = order.items_ids | split: ", " %}
+                                                    {% assign items_titles = order.items_titles | split: ", " %}
+                                                    {% assign items_colors = order.items_colors | split: ", " %}
+                                                    {% assign items_page = order.items_page | split: ", " %}
+                                                    {% assign items_images = order.items_images | split: ", " %}
+                                                    {% assign items_quantities = order.items_quantities | split: ", " %}
+                                                    {% assign items_skus = order.items_skus | split: ", " %}
+                                                    {% assign items_models = order.items_models | split: ", " %}
+                                                    {% assign items_prices = order.items_prices | split:
+                                                    ", " | money:"USD" %}
+
+                                                    {%- for item in items -%}
+                                                    <!-- START OF ITEMS -->
+                                                    <tr>
+                                                        <td align="left">
+                                                            <table class="responsive-table" role="presentation"
+                                                                width="540" cellspacing="0" cellpadding="0" border="0"
+                                                                align="center" style="margin-bottom: 1rem;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="dw db" width="260"
+                                                                            style="padding: 2rem 0;">
+                                                                            <table role="presentation" width="100%"
+                                                                                cellspacing="0" cellpadding="0"
+                                                                                border="0" align="center">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a href="{{ items_page[forloop.index0] }}"
+                                                                                                target="_blank">
+                                                                                                <img src="{{ items_images[forloop.index0] }}"
+                                                                                                    alt="{{ items_titles[forloop.index0] }}"
+                                                                                                    title="{{ items_titles[forloop.index0] }}"
+                                                                                                    width="100"
+                                                                                                    style="object-fit: cover; object-position: center;"
+                                                                                                    id="product-img" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p
+                                                                                                style="font-size: 18px; margin: 0; font-family: Poppins, Arial, Helvetica, sans-serif; margin-top: 1rem;">
+                                                                                                <span
+                                                                                                    style="font-weight: 500;">Model
+                                                                                                    #:</span> {{
+                                                                                                items_models[forloop.index0]
+                                                                                                }}
+                                                                                            </p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p
+                                                                                                style="font-size: 18px; margin: 0; font-family: Poppins, Arial, Helvetica, sans-serif;">
+                                                                                                <span
+                                                                                                    style="font-weight: 500;">SKU:</span>
+                                                                                                {{
+                                                                                                items_skus[forloop.index0]
+                                                                                                }}
+                                                                                            </p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p
+                                                                                                style="font-size: 18px; margin: 0; font-family: Poppins, Arial, Helvetica, sans-serif;">
+                                                                                                <span
+                                                                                                    style="font-weight: 500;">Qty:</span>
+                                                                                                {{
+                                                                                                items_quantities[forloop.index0]
+                                                                                                }}
+                                                                                            </p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td class="dw db" width="260">
+                                                                            <table role="presentation" width="90%"
+                                                                                cellspacing="0" cellpadding="0"
+                                                                                border="0" align="center">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a href="{{ items_page[forloop.index0] }}"
+                                                                                                target="_blank"
+                                                                                                style="font-size: 1.2rem; font-weight: 400; font-family: Poppins, Arial, Helvetica, sans-serif; text-decoration: none;">{{
+                                                                                                items_titles[forloop.index0]
+                                                                                                }} – {{
+                                                                                                items_colors[forloop.index0]
+                                                                                                }}</a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <p
+                                                                                                style="font-size: 18px; font-weight: 400; margin-top: 10px; font-family: Poppins, Arial, Helvetica, sans-serif;">
+                                                                                                $ {{
+                                                                                                items_prices[forloop.index0]
+                                                                                                }}</p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </ul>
                                                 <!-- END OF ITEMS -->
                                             </tbody>
                                         </table>
@@ -498,15 +528,15 @@
                                                                                         style="padding: 0 20px;">
                                                                                         <p
                                                                                             style="font-size: 18px; font-weight: 400; margin-top: 10px; font-family: Poppins, Arial, Helvetica, sans-serif;">
-                                                                                            $259.98
+                                                                                            ${{ order.subtotal }}
                                                                                         </p>
                                                                                         <p
                                                                                             style="font-size: 18px; font-weight: 400; margin-top: 10px; font-family: Poppins, Arial, Helvetica, sans-serif;">
-                                                                                            FREE
+                                                                                            {{ order.shipping_price }}
                                                                                         </p>
                                                                                         <p
                                                                                             style="font-size: 18px; font-weight: 400; margin-top: 10px; font-family: Poppins, Arial, Helvetica, sans-serif;">
-                                                                                            $21.79
+                                                                                            ${{ order.sales_tax }}
                                                                                         </p>
                                                                                     </td>
                                                                                 </tr>
@@ -556,7 +586,7 @@
                                                                                     <td align="right">
                                                                                         <p
                                                                                             style="font-size: 18px; font-weight: 400; margin-top: 10px; font-family: Poppins, Arial, Helvetica, sans-serif; padding: 0 20px;">
-                                                                                            $259.98
+                                                                                            ${{ order.total }}
                                                                                         </p>
                                                                                     </td>
                                                                                 </tr>
@@ -678,7 +708,8 @@
                                                                             Save when you shop Best Buy Outlet for
                                                                             clearance, open-box, refurbished,
                                                                             pre-owned items.</p>
-                                                                        <a href="#" class="btn btn-info"
+                                                                        <a href="{{ company.outlet }}"
+                                                                            class="btn btn-info"
                                                                             style="background-color: #FFF204; border-radius: 5px; font-size: 15px; font-weight: bold; text-decoration: none;  padding: 10px; display: inline-block; color: #3d3d3d;cursor: pointer; font-family: Poppins, Arial, Helvetica, sans-serif; text-align: center;">Shop
                                                                             Best Buy Outlet</a>
                                                                     </td>
@@ -694,7 +725,8 @@
                                                                         <p
                                                                             style="font-size: 12px; font-weight: 400; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;">
                                                                             Sign up and stay connected.</p>
-                                                                        <a href="#" class="btn btn-info"
+                                                                        <a href="{{ company.signup_page }}"
+                                                                            class="btn btn-info"
                                                                             style="background-color: #FFF204; border-radius: 5px; font-size: 15px; font-weight: bold; text-decoration: none;  padding: 10px; display: inline-block; color: #3d3d3d;cursor: pointer; font-family: Poppins, Arial, Helvetica, sans-serif;text-align: center;">Sign
                                                                             Up</a>
                                                                     </td>
@@ -721,7 +753,7 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td align="center" style="padding: 1.5rem 0;">
-                                                                        <a href="https://www.example.com"
+                                                                        <a href="{{ company.deal_of_day_page }}"
                                                                             target="_blank"
                                                                             style="text-decoration: none; color: #F0F2F4;">Deal
                                                                             of the Day</a>
@@ -733,7 +765,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td align="center" style="padding: 1.5rem 0;">
-                                                                        <a href="https://www.example.com"
+                                                                        <a href="{{ company.mobile_app_page }}"
                                                                             target="_blank"
                                                                             style="text-decoration: none; color: #F0F2F4;">Mobile
                                                                             App</a>
@@ -745,7 +777,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td align="center" style="padding: 1.5rem 0;">
-                                                                        <a href="https://www.example.com"
+                                                                        <a href="{{ company.credit_card_page }}"
                                                                             target="_blank"
                                                                             style="text-decoration: none; color: #F0F2F4;">Credit
                                                                             Cards</a>
@@ -757,7 +789,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td align="center" style="padding: 1.5rem 0;">
-                                                                        <a href="https://www.example.com"
+                                                                        <a href="{{ company.support_page }}"
                                                                             target="_blank"
                                                                             style="text-decoration: none; color: #F0F2F4;">Support
                                                                             Center</a>
@@ -835,13 +867,15 @@
                                                             your
                                                             personal information and alerts on privacy risks facing
                                                             consumers,
-                                                            please visit the <a href="http://www.example.com"
+                                                            please visit the <a href="{{ company.privacy_page }}"
                                                                 target="_blank"
                                                                 style="text-decoration: underline; color: inherit;">Best
                                                                 Buy Privacy Hub</a>.
                                                         </p>
                                                         <p style="font-family: Poppins, Arial, Helvetica, sans-serif;">
-                                                            Best Buy 7601 Penn Avenue South, Richfield, MN 55423-3645
+                                                            Best Buy {{ company.street }}, {{ company.city }}, {{
+                                                            company.state }}
+                                                            {{ company.zipcode }}
                                                         </p>
                                                         <p style="font-family: Poppins, Arial, Helvetica, sans-serif;">
                                                             &copy; 2023 Best Buy. All rights reserved.</p>
@@ -860,6 +894,24 @@
             </tbody>
         </table>
 
+
+
+        <ul>
+            {% assign items = order.items_ids | split: ", " %}
+            {% assign items_titles = order.items_titles | split: ", " %}
+            {% assign items_colors = order.items_colors | split: ", " %}
+            {% assign items_styles = order.items_styles | split: ", " %}
+            {% assign items_page = order.items_page | split: ", " %}
+            {% assign items_images = order.items_images | split: ", " %}
+            {% assign items_quantities = order.items_quantities | split: ", " %}
+            {% assign items_prices = order.items_prices | split: ", " %}
+
+            {%- for item in items -%}
+
+            {% endfor %}
+
+        </ul>
+        </script>
         <div id="result"></div>
 
         <!-- Liquid For Development -->
@@ -890,7 +942,7 @@
                         mobile_app_page: "https://www.bestbuy.com/site/misc/mobile-app/pcmcat208500050016.c?id=pcmcat208500050016",
                         credit_card_page: "https://www.bestbuy.com/site/misc/financing-rewards/pcmcat102500050032.c?id=pcmcat102500050032",
                         support_page: "https://www.bestbuy.com/support",
-                        phone_number: "1 (888) 237-8289",
+                        phone_number: "1-888-BEST BUY",
                     },
                     order: {
                         id: "BBY55-111222333444",
@@ -901,18 +953,19 @@
                         pickup_zipcode: "88901-5555",
                         pickup_country: "USA",
                         items_total: 4,
+                        items_ids: "34532, 6543, 8796, 4556",
                         items_models: "MQTP3LL/A, WDBAJP0050BBK-WESN, MTL73LL/A, 4556",
                         items_skus: "6501017, 6406512, 6534641, 6296126",
                         items_titles: "Beats Studio, Easystore 5TB External USB 3.0 Portable Hard Drive, Apple - MacBook Pro 14 Laptop - M3 chip, Thule - Accent Backpack",
                         items_colors: "Rose Gold, Black, Space Gray, Black",
-                        items_page: "https://www.bestbuy.com/site/beats-solo-wireless-on-ear-headphones-rose-gold/6383126.p?skuId=6383126,https://www.bestbuy.com/site/wd-easystore-5tb-external-usb-3-0-portable-hard-drive-black/6406512.p?skuId=6406512,https://www.bestbuy.com/site/apple-macbook-pro-14-laptop-m3-chip-8gb-memory-10-core-gpu-512gb-ssd-latest-model-space-gray/6534641.p?skuId=6534641,https://www.bestbuy.com/site/thule-accent-backpack-23l-bundle-for-15-6-laptop-w-subterra-powershuttle-10-tablet-sleeve-safezone-water-bottle-holder-black/6296126.p?skuId=6296126",
+                        items_page: "https://www.bestbuy.com/site/beats-solo-wireless-on-ear-headphones-rose-gold/6383126.p?skuId=6383126, https://www.bestbuy.com/site/wd-easystore-5tb-external-usb-3-0-portable-hard-drive-black/6406512.p?skuId=6406512, https://www.bestbuy.com/site/apple-macbook-pro-14-laptop-m3-chip-8gb-memory-10-core-gpu-512gb-ssd-latest-model-space-gray/6534641.p?skuId=6534641, https://www.bestbuy.com/site/thule-accent-backpack-23l-bundle-for-15-6-laptop-w-subterra-powershuttle-10-tablet-sleeve-safezone-water-bottle-holder-black/6296126.p?skuId=6296126",
                         items_images: "./img/beats-headphones.jpg, ./img/external-hard-drive.jpg, ./img/macbook.jpg, ./img/backpack.jpg",
                         items_quantities: "1, 2, 3, 1",
                         items_prices: '199.99, 134.99, 1449.00, 129.95',
-                        subtotal: "1,913.93",
-                        total: "2,074.32",
+                        subtotal: "4,946.92",
+                        total: "5,379.47",
                         shipping_price: "Free",
-                        sales_tax: "160.39"
+                        sales_tax: "414.55"
                     }
                 })
                 .then((html) => (result.innerHTML = html));
